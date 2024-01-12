@@ -1,7 +1,6 @@
 #include "JugadorGenerico.h"
 
 int main() {
-	system("color 03");
 
 	system("color 03");
 
@@ -23,8 +22,6 @@ int main() {
 	// CONSULTAR CON EL PROFESOR ESTE METODO...
 	cout << player->pedirCarta(mazo)->toString() << endl;
 
-
-	system("pause");
 
 
 	system("pause");
