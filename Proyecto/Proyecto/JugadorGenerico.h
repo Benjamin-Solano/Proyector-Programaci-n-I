@@ -9,8 +9,8 @@ public:
 	JugadorGenerico();
 	JugadorGenerico(string nick, Mano* mano);
 
-	~JugadorGenerico();
-	Carta* pedirCarta(Mazo* mazo);
+	virtual ~JugadorGenerico();
+	void pedirCarta(Mazo& mazo);
 	bool sePaso();
 
 	string toString();

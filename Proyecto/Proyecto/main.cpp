@@ -4,7 +4,6 @@ int main() {
 
 	system("color 03");
 
-
 	Mazo* mazo = new Mazo();
 	mazo->Inicializar();
 	mazo->barajar();
@@ -14,15 +13,9 @@ int main() {
 	mano->agregarCarta(mazo);
 	mano->agregarCarta(mazo);
 
-
 	mano->getPuntos();
 
 	cout << player->toString() << endl;
-
-	// CONSULTAR CON EL PROFESOR ESTE METODO...
-	cout << player->pedirCarta(mazo)->toString() << endl;
-
-
 
 	system("pause");
 	return 0;

@@ -7,6 +7,5 @@ private:
 public:
 	Jugador(string nickname, Mano* man);
 	virtual ~Jugador();
-
 	
 };

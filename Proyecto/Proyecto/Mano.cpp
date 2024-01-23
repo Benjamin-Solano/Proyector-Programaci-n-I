@@ -1,7 +1,7 @@
 #include"Mano.h"
 #include <string> // Libreria para la implementacion del stoi...
 
-
+//====== CONSTRUCTORES ======//
 Mano::Mano(){
 	tam = 3;
 	can = 0;
@@ -14,16 +14,20 @@ Mano::Mano(const Mano& CopyMano) : tam(CopyMano.tam), can(CopyMano.can) {
     }
 }
 
+// ======= DESTRUCTOR ===== //
 Mano::~Mano(){
 	limpiar();
 }
 
+
+// SOLICITA UNA CARTA DIRECTAMENTE DEL MAZO EN JUEGO //
 void Mano::agregarCarta(Mazo* mazo){
 	if (can < tam) {
 		cartas[can++] = mazo->tomarCarta();
 	}
 }
 
+// LIMPIA EL MAZO, ELIMINA CARTAS, LUEGO EL MAZO
 void Mano::limpiar() {
     for (int i = 0; i < can; ++i) {
         delete cartas[i];
@@ -35,13 +39,14 @@ void Mano::limpiar() {
     can = 0;
 }
 
-
+// SUMA TODOS LOS PUNTOS GANADOS EN LAS CARTAS, REGRESA EL TOTAL
+// TOMANDO EN CUENTA LA VERIFICACION DEL AS
 int Mano::getPuntos(){
         int puntos = 0;
         int as = 0;
         for (int i = 0; i < can; ++i) {
             string valor = cartas[i]->getValor();
-            if (valor == "A") {  // As
+            if (valor == "A") {  // AS
                 puntos += 11;
                 as++;
             }
@@ -57,6 +62,7 @@ int Mano::getPuntos(){
         return puntos;
 }
 
+// ======== MUESTRA LA MANO ======= //
 string Mano::toString() {
     stringstream s;
     s << "======= CARTAS EN MANO ========" << endl << endl;
