@@ -36,7 +36,7 @@ void ListaJ::ingresarUltimo(JugadorGenerico* player)
 {
 	NodoJ* pex = head;
 	NodoJ* nuevo = nullptr;
-
+	//if (!existe(player->getNick())) {
 	if (head == nullptr) {
 		ingresarPrimero(player);
 	}
@@ -47,6 +47,8 @@ void ListaJ::ingresarUltimo(JugadorGenerico* player)
 		nuevo = new NodoJ(player, nullptr);
 		pex->setNext(nuevo);
 	}
+	//}
+
 
 }
 
@@ -87,6 +89,44 @@ JugadorGenerico* ListaJ::getJugador(string nick)
 		pex = pex->getNext();
 	}
 	return nullptr;
+}
+
+JugadorGenerico* ListaJ::getJugador(int lugar)
+{
+	int cont = 1;
+	NodoJ* pex = head;
+	if (lugar == 1) {
+		return pex->getJugador();
+	}
+	else {
+		while (pex != nullptr && cont < lugar) {
+			pex = pex->getNext();
+			cont++;
+		}
+		if (cont == lugar) {
+			return pex->getJugador();
+		}
+		if (pex == nullptr) {
+			return nullptr;
+		}
+	}
+	return nullptr;
+}
+
+JugadorGenerico* ListaJ::getGanador()
+{
+	int cont = 0;
+	NodoJ* pex = head;
+	NodoJ* w = nullptr;
+	while (pex != nullptr) {
+		if (pex->getJugador()->getPuntos() > cont && pex->getJugador()->getPuntos() <= 21) {
+			cont = pex->getJugador()->getPuntos();
+			w = pex;
+		}
+		pex = pex->getNext();
+	}
+	return w->getJugador();
+
 }
 
 NodoJ* ListaJ::getNodo(string nick)

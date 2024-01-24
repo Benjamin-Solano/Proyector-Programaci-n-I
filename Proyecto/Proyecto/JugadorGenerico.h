@@ -9,9 +9,11 @@ public:
 	JugadorGenerico();
 	JugadorGenerico(string nick, Mano* mano);
 
-	virtual ~JugadorGenerico();
-	void pedirCarta(Mazo& mazo);
+	~JugadorGenerico();
+	void pedirCarta(Mazo* mazo);
+	Carta* getCarta(int lugar);
 	bool sePaso();
+	int getPuntos();
 	string getNick();
 	string toString();
 };

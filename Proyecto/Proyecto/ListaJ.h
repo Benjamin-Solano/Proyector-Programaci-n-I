@@ -15,6 +15,8 @@ public:
 	void eliminar(string nick);
 
 	JugadorGenerico* getJugador(string nick);
+	JugadorGenerico* getJugador(int lugar);
+	JugadorGenerico* getGanador();
 	NodoJ* getNodo(string nick);
 	int cantidad();
 

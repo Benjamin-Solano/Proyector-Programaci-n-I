@@ -12,8 +12,8 @@ public:
 
 	void agregarCarta(Mazo*);
 	void limpiar();
-    int getPuntos();
-
+	int getPuntos();
+	Carta* getCarta(int lugar);
 	string toString();
 
 };

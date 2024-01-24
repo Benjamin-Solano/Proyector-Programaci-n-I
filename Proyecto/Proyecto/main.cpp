@@ -1,24 +1,16 @@
 #include "JugadorGenerico.h"
-#include "ListaJ.h"
+#include "Juego.h"
 
 int main() {
 
 	system("color 03");
-	// Commentario 
+
+
+	Juego j1;
+
+	//cambio en agregar carta de & a * por la lista.
+
 	/*Mazo* mazo = new Mazo();
-	mazo->Inicializar();
-	mazo->barajar();
-
-	Mano* mano = new Mano();
-	JugadorGenerico* player = new JugadorGenerico("BENJAMIN", mano);
-	mano->agregarCarta(mazo);
-	mano->agregarCarta(mazo);
-
-	mano->getPuntos();
-
-	cout << player->toString() << endl;*/
-
-	Mazo* mazo = new Mazo();
 	mazo->Inicializar();
 	mazo->barajar();
 
@@ -46,7 +38,17 @@ int main() {
 	lista->ingresarUltimo(p3);
 	lista->ingresarUltimo(p4);
 	cout << lista->cantidad() << endl;
-	cout << lista->toString() << endl;
+	cout << lista->toString() << endl;	*/
+
+	/*
+	cout << mano->getPuntos() << endl;
+	// CONSULTAR CON EL PROFESOR ESTE METODO... //se hizo un cambio en el metodo (player->pedir carta()) para probar algo
+	player->pedirCarta(mazo);
+	cout << player->toString() << endl;
+	cout << mano->getPuntos() << endl;
+	*/
+
+
 
 	system("pause");
 	return 0;
