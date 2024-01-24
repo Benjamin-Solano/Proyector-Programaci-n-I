@@ -3,7 +3,7 @@
 int main() {
 
 	system("color 03");
-
+	// Commentario 
 	Mazo* mazo = new Mazo();
 	mazo->Inicializar();
 	mazo->barajar();
