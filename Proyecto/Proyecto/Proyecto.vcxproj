@@ -131,17 +131,21 @@
     <ClCompile Include="Dealer.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="JugadorGenerico.cpp" />
+    <ClCompile Include="ListaJ.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mano.cpp" />
     <ClCompile Include="Mano.h" />
     <ClCompile Include="Mazo.cpp" />
+    <ClCompile Include="NodoJ.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Carta.h" />
     <ClInclude Include="Dealer.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="JugadorGenerico.h" />
+    <ClInclude Include="ListaJ.h" />
     <ClInclude Include="Mazo.h" />
+    <ClInclude Include="NodoJ.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -25,6 +25,11 @@ bool JugadorGenerico :: sePaso(){
 	return (mano->getPuntos() > 21);
 }
 
+string JugadorGenerico::getNick()
+{
+	return nickname;
+}
+
 // ======== MOSTRAR JUGADOR ============ //
 string JugadorGenerico :: toString(){
 	stringstream salida;

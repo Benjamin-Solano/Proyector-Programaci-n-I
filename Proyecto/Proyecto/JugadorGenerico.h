@@ -12,6 +12,6 @@ public:
 	virtual ~JugadorGenerico();
 	void pedirCarta(Mazo& mazo);
 	bool sePaso();
-
+	string getNick();
 	string toString();
 };
