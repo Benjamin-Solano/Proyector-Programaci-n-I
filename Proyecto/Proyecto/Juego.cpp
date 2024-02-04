@@ -17,12 +17,25 @@ Juego::Juego() {
 	do {
 		listaJugadores->ingresarUltimo(crearJugadorGenerico());
 		system("cls");
-		cout << "Desea agregar otro jugador?: ( 'y' || 'n' ) " << endl; cin >> op;
+		cout << "Desea agregar otro jugador?: ( 'y' || 'n' ) " << endl;cin >> op;
 		system("cls");
 	} while (op == 'y' || op == 'Y');
 
 	//creacion de dealer
 	JugadorGenerico* dealer = crearDealer();
+
+	//dar dos cartas a los jugadores
+	int numDeJugadores = listaJugadores->cantidad();
+	for (int i = 1; i <= numDeJugadores; i++) {
+		listaJugadores->getJugador(i)->pedirCarta(mazo);
+		listaJugadores->getJugador(i)->pedirCarta(mazo);
+	}
+
+	//dar dos cartas al dealer
+	dealer->pedirCarta(mazo);
+	dealer->pedirCarta(mazo);
+
+
 
 	//opciones por turno
 	do {
@@ -38,11 +51,6 @@ Juego::Juego() {
 		case 'p':
 			break;
 		case 'g':
-
-			listaJugadores->guardandoDatos();
-			mazo->guardarMazo();
-
-
 			break;//falta persistencia de datos
 		case 's':
 			salir = -1;
@@ -53,11 +61,11 @@ Juego::Juego() {
 		system("cls");
 		cout << listaJugadores->getJugador(lugar)->toString() << endl;
 		system("pause");
-
+		system("cls");
 		//mostrar la primera carta del dealer en la primera ronda
-		if (ptsDealer == 0 && comodin == listaJugadores->cantidad() - 1) {
-			dealer->pedirCarta(mazo);
-			dealer->pedirCarta(mazo);
+		if (comodin == listaJugadores->cantidad() - 1) {
+			/*dealer->pedirCarta(mazo);
+			dealer->pedirCarta(mazo);*/
 			cout << "la primera carta del dealer es: " << endl;
 			cout << dealer->getCarta(0)->toString() << endl;
 			system("pause");
@@ -82,9 +90,9 @@ Juego::Juego() {
 
 	ptsDealer = dealer->getPuntos();
 
-	//resultados
+	//resultados (comentar para entrega final, se deja por ahora para ver bien como va todo)
 	if (primero != 0) {
-		cout << "el primero jugador en alcanzar 21 fue: " << listaJugadores->getJugador(primero)->getNick() << endl;
+		cout << "El primero jugador en alcanzar 21 fue: " << listaJugadores->getJugador(primero)->getNick() << endl;
 		return;
 	}
 
@@ -103,7 +111,9 @@ Juego::Juego() {
 	else
 		cout << "GANO EL DEALER CON " << ptsDealer << " puntos!" << endl;
 
-
+	//RESULTADOS
+	cout << listaJugadores->toString() << endl;
+	cout << dealer->toString() << endl;
 }
 
 Juego::~Juego() {
