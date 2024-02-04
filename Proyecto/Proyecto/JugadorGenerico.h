@@ -1,5 +1,9 @@
 #pragma once
 #include"Mano.h"
+#include<fstream>
+
+#define DELIMITA_CAMPO ','
+#define DELIMITA_REGISTRO '\n'
 
 class JugadorGenerico {
 private:
@@ -16,4 +20,7 @@ public:
 	int getPuntos();
 	string getNick();
 	string toString();
+
+	virtual void guardar(ostream& salida);
+
 };

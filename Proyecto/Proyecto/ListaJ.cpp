@@ -166,3 +166,15 @@ string ListaJ::toString()
 	s << "-----------------------------------------" << endl;
 	return s.str();
 }
+
+void ListaJ::guardandoDatos() {
+	string rutaArchivo = "..//Jugadores.txt";
+	NodoJ* exo = head;
+	ofstream salida;
+	salida.open(rutaArchivo.c_str());
+	while (exo != nullptr) {
+		exo->getJugador()->guardar(salida);
+		exo = exo->getNext();
+	}
+	salida.close();
+}

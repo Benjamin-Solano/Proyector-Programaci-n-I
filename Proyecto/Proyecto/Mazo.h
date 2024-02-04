@@ -1,5 +1,6 @@
 #pragma once
 #include"Carta.h"
+#include <fstream>
 #include <random> 
 class Mazo {
 private:
@@ -14,4 +15,7 @@ public:
 	void barajar();
 	Carta* tomarCarta();
 	string toString();
+
+	void guardarMazo();
+
 };

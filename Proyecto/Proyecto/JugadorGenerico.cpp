@@ -42,3 +42,14 @@ string JugadorGenerico::toString() {
 	salida << mano->toString() << endl;
 	return salida.str();
 }
+
+
+void JugadorGenerico::guardar(ostream& salida) {
+	salida << nickname << DELIMITA_CAMPO;
+	for (int i = 0; i < mano->Cantidad_de_Cartas(); i++) {
+		salida << mano->getCarta(i)->getValor() << DELIMITA_CAMPO;
+		salida << mano->getCarta(i)->getPalo() << DELIMITA_CAMPO;
+	}
+	salida << DELIMITA_REGISTRO;
+	salida << endl;
+}

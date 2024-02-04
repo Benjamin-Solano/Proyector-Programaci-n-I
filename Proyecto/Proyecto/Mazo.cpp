@@ -96,3 +96,14 @@ string Mazo::toString(){
 	}
 	return salida.str();
 }
+
+// ============= GUARDAR MAZO =========== //
+void Mazo::guardarMazo() {
+	ofstream salida;
+	string rutaArchivo = "..//Mazo.txt";
+	salida.open(rutaArchivo.c_str());
+	for (int i = 0; i < tam; i++) {
+		carta[i]->guardar(salida);
+	}
+	salida.close();
+}

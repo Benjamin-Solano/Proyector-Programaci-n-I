@@ -28,3 +28,10 @@ string Carta::toString(){
 	salida << "    =====================" << endl;
 	return salida.str();
 }
+
+// ============ GUARDAR MAZO EN SSD =========== //
+void Carta::guardar(ostream& salida) {
+	salida << valor << DELIMITADOR_CAMPO;
+	salida << palo << DELIMITADOR_CAMPO;
+	salida << bocaAbajo << DELIMITADOR_REGISTRO;
+}

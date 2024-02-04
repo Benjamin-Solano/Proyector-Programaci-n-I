@@ -3,6 +3,9 @@
 #include<sstream>
 using namespace std;
 
+#define DELIMITADOR_CAMPO '\t'
+#define DELIMITADOR_REGISTRO '\n'
+
 class Carta {
 private:
 	string valor;
@@ -20,5 +23,7 @@ public:
 	string getValor();
 	string getPalo();
 	
+	virtual void guardar(ostream& salida);
+
 	string toString();
 };

@@ -1,5 +1,8 @@
 #pragma once
 #include "NodoJ.h"
+#include <fstream>
+
+
 class ListaJ
 {
 private:
@@ -19,6 +22,9 @@ public:
 	JugadorGenerico* getGanador();
 	NodoJ* getNodo(string nick);
 	int cantidad();
+
+	void guardandoDatos();
+
 
 	string toString();
 	//string imprimir(); //imprime todos menos casa

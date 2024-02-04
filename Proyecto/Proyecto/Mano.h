@@ -10,6 +10,7 @@ public:
 	Mano(const Mano& CopyMano);
 	~Mano();
 
+	int Cantidad_de_Cartas();
 	void agregarCarta(Mazo*);
 	void limpiar();
 	int getPuntos();

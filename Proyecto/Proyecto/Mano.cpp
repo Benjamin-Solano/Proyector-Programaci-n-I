@@ -19,6 +19,8 @@ Mano::~Mano() {
     limpiar();
 }
 
+int Mano::Cantidad_de_Cartas() { return can; }
+
 void Mano::agregarCarta(Mazo* mazo) {
     if (can < tam) {
         cartas[can++] = mazo->tomarCarta();
