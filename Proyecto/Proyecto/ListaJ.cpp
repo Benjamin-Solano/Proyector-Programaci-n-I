@@ -178,3 +178,19 @@ void ListaJ::guardandoDatos() {
 	}
 	salida.close();
 }
+
+ListaJ* ListaJ::RecuperandoDatos()
+{
+	fstream strm("..//Jugadores.txt", ios::in);
+	if (strm.is_open()) {
+		ListaJ* lista = new ListaJ();
+		while (JugadorGenerico* jugador = JugadorGenerico::recuperar(strm)) {
+			if (jugador == nullptr)
+				break;
+			lista->ingresarUltimo(jugador);
+		}
+		return lista;
+		strm.close();
+	}
+	return nullptr;
+}

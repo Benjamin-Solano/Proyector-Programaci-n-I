@@ -44,6 +44,11 @@ string JugadorGenerico::toString() {
 }
 
 
+void JugadorGenerico::ingresar(Carta* carta)
+{
+	mano->ingresarCarta(carta);
+}
+
 void JugadorGenerico::guardar(ostream& salida) {
 	salida << nickname << DELIMITA_CAMPO;
 	for (int i = 0; i < mano->Cantidad_de_Cartas(); i++) {
@@ -52,4 +57,18 @@ void JugadorGenerico::guardar(ostream& salida) {
 	}
 	salida << DELIMITA_REGISTRO;
 	salida << endl;
+}
+
+JugadorGenerico* JugadorGenerico::recuperar(fstream& strm)
+{
+	string nombreStr = "";
+	Mano* mano = new Mano();
+	getline(strm, nombreStr, DELIMITADOR_CAMPO);
+	while (Carta* carta = Carta::recuperar(strm)) {
+		
+		if (carta == nullptr)
+			break;
+		mano->ingresarCarta(carta);
+	}
+	return new JugadorGenerico(nombreStr, mano);
 }

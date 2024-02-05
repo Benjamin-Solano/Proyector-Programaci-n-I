@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
 #include<sstream>
+#include <fstream>
+#include <string>
 using namespace std;
 
 #define DELIMITADOR_CAMPO '\t'
@@ -14,6 +16,7 @@ private:
 public:
 	Carta();
 	Carta(string, string, bool);
+	Carta(Carta* car);
 	~Carta();
 
 	void setValor(string val);
@@ -22,8 +25,10 @@ public:
 
 	string getValor();
 	string getPalo();
+	bool getBocaAbajo();
 	
 	virtual void guardar(ostream& salida);
-
+	
+	static Carta* recuperar(fstream& strm);
 	string toString();
 };

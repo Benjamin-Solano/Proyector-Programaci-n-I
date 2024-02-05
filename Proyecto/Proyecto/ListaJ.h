@@ -24,6 +24,7 @@ public:
 	int cantidad();
 
 	void guardandoDatos();
+	static ListaJ* RecuperandoDatos();
 
 
 	string toString();

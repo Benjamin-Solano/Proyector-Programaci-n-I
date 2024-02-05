@@ -27,6 +27,13 @@ void Mano::agregarCarta(Mazo* mazo) {
     }
 }
 
+void Mano::ingresarCarta(Carta* c)
+{
+    if (can < tam) {
+        cartas[can++] = c;
+    }
+}
+
 void Mano::limpiar() {
     for (int i = 0; i < can; ++i) {
         delete cartas[i];

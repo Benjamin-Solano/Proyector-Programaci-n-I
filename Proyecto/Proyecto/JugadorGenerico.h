@@ -21,6 +21,8 @@ public:
 	string getNick();
 	string toString();
 
+	void ingresar(Carta* carta);
 	virtual void guardar(ostream& salida);
+	static JugadorGenerico* recuperar(fstream& strm);
 
 };

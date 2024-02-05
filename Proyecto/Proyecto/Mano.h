@@ -12,6 +12,7 @@ public:
 
 	int Cantidad_de_Cartas();
 	void agregarCarta(Mazo*);
+	void ingresarCarta(Carta* c);
 	void limpiar();
 	int getPuntos();
 	Carta* getCarta(int lugar);

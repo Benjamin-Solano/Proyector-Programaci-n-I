@@ -15,7 +15,9 @@ public:
 	void barajar();
 	Carta* tomarCarta();
 	string toString();
+	void ingresar(Carta* c);
 
 	void guardarMazo();
+	void recuperar();
 
 };

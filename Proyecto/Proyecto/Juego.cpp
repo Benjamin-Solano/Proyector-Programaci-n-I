@@ -51,6 +51,8 @@ Juego::Juego() {
 		case 'p':
 			break;
 		case 'g':
+			//listaJugadores->guardandoDatos();
+			//mazo->guardarMazo();
 			break;//falta persistencia de datos
 		case 's':
 			salir = -1;

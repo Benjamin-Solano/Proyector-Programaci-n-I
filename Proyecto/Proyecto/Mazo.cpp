@@ -97,6 +97,13 @@ string Mazo::toString(){
 	return salida.str();
 }
 
+void Mazo::ingresar(Carta* c)
+{
+	if (can < tam) {
+		carta[can++] = c;
+	}
+}
+
 // ============= GUARDAR MAZO =========== //
 void Mazo::guardarMazo() {
 	ofstream salida;
@@ -106,4 +113,20 @@ void Mazo::guardarMazo() {
 		carta[i]->guardar(salida);
 	}
 	salida.close();
+}
+
+void Mazo::recuperar()
+{
+	fstream strm("..//Mazo.txt", ios::in);
+	if (strm.is_open()) {
+		Mazo* mazo = new Mazo();
+		while (Carta* carta = Carta::recuperar(strm)) {
+			if (carta == nullptr)
+				break;
+			mazo->ingresar(carta);
+		}
+
+		strm.close();
+	}
+
 }
