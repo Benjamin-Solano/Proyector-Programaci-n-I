@@ -1,10 +1,10 @@
-Benjamin,3
-A,Treboles,0
+jona,3
+A,Corazones,0
 8,Espadas,0
-J,Corazones,0
+9,Espadas,0
 
-Juli,3
-10,Corazones,0
-6,Treboles,0
-J,Espadas,0
+pepe,3
+8,Diamantes,0
+2,Corazones,0
+9,Corazones,0
 

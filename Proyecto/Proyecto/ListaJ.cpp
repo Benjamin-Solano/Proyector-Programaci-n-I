@@ -184,7 +184,7 @@ ListaJ* ListaJ::RecuperandoDatos(){
 	if (strm.is_open()) {
 		ListaJ* lista = new ListaJ();
 		while (JugadorGenerico* jugador = JugadorGenerico::recuperar(strm)) {
-			if (jugador == nullptr)
+			if (jugador == nullptr || jugador->getNick()=="")
 				break;
 			lista->ingresarUltimo(jugador);
 		}
