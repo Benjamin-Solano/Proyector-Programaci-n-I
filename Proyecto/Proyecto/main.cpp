@@ -3,7 +3,10 @@
 
 int main() {
 
-	
+	Juego* jugar = new Juego();
+
+
+	jugar;
 
 
 	system("pause");

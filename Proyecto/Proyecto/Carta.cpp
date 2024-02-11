@@ -42,18 +42,18 @@ string Carta::toString(){
 
 // ============ GUARDAR MAZO EN SSD =========== //
 void Carta::guardar(ostream& salida) {
-	salida << valor << DELIMITADOR_CAMPO;
-	salida << palo << DELIMITADOR_CAMPO;
-	salida << bocaAbajo << DELIMITADOR_REGISTRO;
+	salida << valor << DELIMITA_CAMPO;
+	salida << palo << DELIMITA_CAMPO;
+	salida << bocaAbajo << DELIMITA_REGISTRO;
 }
 
 Carta* Carta::recuperar(fstream& strm)
 {
 	string valorStr, paloStr, baStr = "";
 	bool bocaAbajo = false;
-	getline(strm, valorStr, DELIMITADOR_CAMPO);
-	getline(strm, paloStr, DELIMITADOR_CAMPO);
-	getline(strm, baStr, DELIMITADOR_REGISTRO);
+	getline(strm, valorStr, DELIMITA_CAMPO);
+	getline(strm, paloStr, DELIMITA_CAMPO);
+	getline(strm, baStr, DELIMITA_REGISTRO);
 	if (baStr == "")
 		return nullptr;
 	if (baStr == "1")

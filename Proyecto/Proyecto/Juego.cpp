@@ -15,11 +15,18 @@ Juego::Juego() {
 
 	//llenar la lista
 	do {
-		listaJugadores->ingresarUltimo(crearJugadorGenerico());
-		system("cls");
-		cout << "Desea agregar otro jugador?: ( 'y' || 'n' ) " << endl;cin >> op;
+		cout << "Desea agregar un jugador?: ( 'y' || 'n' ) o Recuperar Partida Anterior?: ( 'r' )" << endl;cin >> op;
+		if (op == 'y' || op == 'Y') {
+			system("cls");
+			listaJugadores->ingresarUltimo(crearJugadorGenerico());
+		}
+		else if (op == 'r' || op == 'R') {
+			delete listaJugadores;
+			listaJugadores = ListaJ().RecuperandoDatos();
+		}
 		system("cls");
 	} while (op == 'y' || op == 'Y');
+
 
 	//creacion de dealer
 	JugadorGenerico* dealer = crearDealer();
@@ -51,9 +58,9 @@ Juego::Juego() {
 		case 'p':
 			break;
 		case 'g':
-			//listaJugadores->guardandoDatos();
-			//mazo->guardarMazo();
-			break;//falta persistencia de datos
+			listaJugadores->guardandoDatos();
+			mazo->guardarMazo();
+			break;
 		case 's':
 			salir = -1;
 			break;

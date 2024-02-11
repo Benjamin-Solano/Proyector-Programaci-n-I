@@ -179,8 +179,7 @@ void ListaJ::guardandoDatos() {
 	salida.close();
 }
 
-ListaJ* ListaJ::RecuperandoDatos()
-{
+ListaJ* ListaJ::RecuperandoDatos(){
 	fstream strm("..//Jugadores.txt", ios::in);
 	if (strm.is_open()) {
 		ListaJ* lista = new ListaJ();

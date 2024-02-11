@@ -5,8 +5,8 @@
 #include <string>
 using namespace std;
 
-#define DELIMITADOR_CAMPO '\t'
-#define DELIMITADOR_REGISTRO '\n'
+#define DELIMITA_CAMPO ','
+#define DELIMITA_REGISTRO '\n'
 
 class Carta {
 private:

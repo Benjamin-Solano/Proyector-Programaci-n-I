@@ -1,0 +1,10 @@
+Benjamin,3
+A,Treboles,0
+8,Espadas,0
+J,Corazones,0
+
+Juli,3
+10,Corazones,0
+6,Treboles,0
+J,Espadas,0
+

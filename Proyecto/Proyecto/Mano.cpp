@@ -7,6 +7,12 @@ Mano::Mano() {
     can = 0;
     cartas = new Carta * [tam];
 
+    for (int i = 0; i < tam; i++) {
+        Carta* carta = new Carta();
+        cartas[i] = carta;
+    }
+
+
 }
 Mano::Mano(const Mano& CopyMano) : tam(CopyMano.tam), can(CopyMano.can) {
     cartas = new Carta * [tam];
