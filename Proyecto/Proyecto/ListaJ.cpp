@@ -168,10 +168,12 @@ string ListaJ::toString()
 }
 
 void ListaJ::guardandoDatos() {
-	string rutaArchivo = "..//Jugadores.txt";
+	//string rutaArchivo = "..//Jugadores.txt";
 	NodoJ* exo = head;
-	ofstream salida;
-	salida.open(rutaArchivo.c_str());
+	fstream salida("..//Jugadores.txt", ios::out);
+	if (!salida.is_open())
+		return;
+	//salida.open(rutaArchivo.c_str());
 	while (exo != nullptr) {
 		exo->getJugador()->guardar(salida);
 		exo = exo->getNext();

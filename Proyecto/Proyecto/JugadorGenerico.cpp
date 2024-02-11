@@ -51,27 +51,20 @@ void JugadorGenerico::ingresar(Carta* carta)
 
 
 
-void JugadorGenerico::guardar(ostream& salida) {
+void JugadorGenerico::guardar(fstream& salida) {
 	salida << nickname << DELIMITA_CAMPO;
-	salida << mano->Cantidad_de_Cartas() << DELIMITA_REGISTRO;
-	for (int i = 0; i < mano->Cantidad_de_Cartas(); i++) {
-		salida << mano->getCarta(i)->getValor() << DELIMITA_CAMPO;
-		salida << mano->getCarta(i)->getPalo() << DELIMITA_CAMPO;
-		salida << mano->getCarta(i)->getBocaAbajo() << DELIMITA_REGISTRO;
-	}
-	salida << endl;
+	salida << cantidadCartasMano() << DELIMITA_REGISTRO;
+	mano->guardar(salida);
 }
 
 JugadorGenerico* JugadorGenerico::recuperar(fstream& archivo){
 	string nombreStr = "";
 	string cantidadCartas = "";
-	Mano* mano = new Mano();
+	Mano* mano;
 	getline(archivo, nombreStr, DELIMITA_CAMPO);
 	getline(archivo, cantidadCartas, DELIMITA_REGISTRO);
-	while (Carta* carta = Carta::recuperar(archivo)) {
-		if (carta == nullptr)
-			break;
-		mano->ingresarCarta(carta);
-	}
+	mano = Mano::recuperar(archivo);
+	if (mano == nullptr)
+		return nullptr;
 	return new JugadorGenerico(nombreStr, mano);
 }

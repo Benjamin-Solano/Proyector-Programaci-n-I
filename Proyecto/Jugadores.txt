@@ -1,10 +1,7 @@
 jona,3
-A,Corazones,0
-8,Espadas,0
-9,Espadas,0
-
-pepe,3
-8,Diamantes,0
-2,Corazones,0
-9,Corazones,0
-
+2,Treboles,0
+Q,Corazones,0
+3,Treboles,0
+pepe,2
+A,Diamantes,0
+8,Treboles,0

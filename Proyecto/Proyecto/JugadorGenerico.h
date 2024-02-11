@@ -22,7 +22,7 @@ public:
 	string toString();
 
 	void ingresar(Carta* carta);
-	virtual void guardar(ostream& salida);
+	virtual void guardar(fstream& salida);
 	static JugadorGenerico* recuperar(fstream& strm);
-
+	int cantidadCartasMano() { return mano->Cantidad_de_Cartas(); }
 };

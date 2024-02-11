@@ -92,3 +92,5 @@ string Mano::toString() {
     s << "===============================" << endl << endl;
     return s.str();
 }
+
+

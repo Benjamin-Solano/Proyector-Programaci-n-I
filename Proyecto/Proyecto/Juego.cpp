@@ -100,12 +100,14 @@ Juego::Juego() {
 	ptsDealer = dealer->getPuntos();
 
 	//resultados (comentar para entrega final, se deja por ahora para ver bien como va todo)
-	if (primero != 0) {
+	/*if (primero != 0) {
 		cout << "El primero jugador en alcanzar 21 fue: " << listaJugadores->getJugador(primero)->getNick() << endl;
 		return;
 	}
-
-	cout << " El jugador con puntaje mas cercano a 21 es: " << listaJugadores->getGanador()->getNick() << endl;
+	if (listaJugadores->getGanador() != nullptr) {
+		cout << " El jugador con puntaje mas cercano a 21 es: " << listaJugadores->getGanador()->getNick() << endl;
+	}
+	
 
 	if (ptsDealer == 21)
 		cout << "GANO EL DEALER POR TENER 21 PUNTOS" << endl;
@@ -118,7 +120,7 @@ Juego::Juego() {
 	}
 
 	else
-		cout << "GANO EL DEALER CON " << ptsDealer << " puntos!" << endl;
+		cout << "GANO EL DEALER CON " << ptsDealer << " puntos!" << endl;*/
 
 	//RESULTADOS
 	cout << listaJugadores->toString() << endl;
