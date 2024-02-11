@@ -57,13 +57,17 @@ void JugadorGenerico::guardar(fstream& salida) {
 	mano->guardar(salida);
 }
 
-JugadorGenerico* JugadorGenerico::recuperar(fstream& archivo){
+	JugadorGenerico* JugadorGenerico::recuperar(fstream& archivo){
 	string nombreStr = "";
 	string cantidadCartas = "";
 	Mano* mano;
 	getline(archivo, nombreStr, DELIMITA_CAMPO);
 	getline(archivo, cantidadCartas, DELIMITA_REGISTRO);
-	mano = Mano::recuperar(archivo);
+	if (cantidadCartas == "")
+		return nullptr;
+	int cantidad = stoi(cantidadCartas);
+
+	mano = Mano::recuperar(archivo, cantidad);
 	if (mano == nullptr)
 		return nullptr;
 	return new JugadorGenerico(nombreStr, mano);

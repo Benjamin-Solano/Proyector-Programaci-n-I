@@ -24,9 +24,10 @@ public:
 		}
 	}
 
-	static Mano* recuperar(fstream& strm) {
+	static Mano* recuperar(fstream& strm, int cantidadCartas) {
 		Mano* mano = new Mano();
-		while (Carta* carta = Carta::recuperar(strm)) {
+		for (int i = 0; i < cantidadCartas; i++) {
+			Carta* carta = Carta::recuperar(strm);
 			if (carta == nullptr)
 				break;
 			mano->ingresarCarta(carta);
