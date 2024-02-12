@@ -1,3 +1,12 @@
+/*
+
+PROYECTO PROGRAMACION 1
+ESTUDIANTES:
+BENJAMIN SOLANO
+JONATHAN AVALOS
+
+*/
+
 #include"Mazo.h"
 
 class Mano {

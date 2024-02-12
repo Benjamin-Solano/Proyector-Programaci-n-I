@@ -1,3 +1,12 @@
+/*
+
+PROYECTO PROGRAMACION 1
+ESTUDIANTES:
+BENJAMIN SOLANO
+JONATHAN AVALOS
+
+*/
+
 #pragma once
 #include"Mano.h"
 #include<fstream>

@@ -1,7 +1,6 @@
-jona,3
-2,Treboles,0
-Q,Corazones,0
-3,Treboles,0
-pepe,2
-A,Diamantes,0
-8,Treboles,0
+Benjamin,2
+8,Espadas,0
+3,Diamantes,0
+Jose,2
+J,Treboles,0
+9,Diamantes,0

@@ -115,6 +115,7 @@ void Mazo::guardarMazo() {
 	salida.close();
 }
 
+// ============ RECUPERA MAZO ============ //
 void Mazo::recuperar()
 {
 	fstream strm("..//Mazo.txt", ios::in);

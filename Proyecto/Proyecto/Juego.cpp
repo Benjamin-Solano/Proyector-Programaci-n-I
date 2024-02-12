@@ -1,7 +1,7 @@
 #include "Juego.h"
 
 Juego::Juego() {
-	//cosas
+	//INICIALIZACION DE VARIABLES AUXILIARES Y OBJETOS
 	mazo = new Mazo();
 	mazo->Inicializar(); mazo->barajar();
 
@@ -13,7 +13,7 @@ Juego::Juego() {
 	int ptsDealer = 0;
 	int comodin = 0;
 
-	//llenar la lista
+	//CONSULTA DE NUEVO JUEGO O RECUPERAR PARTIDA...
 	do {
 		cout << "Desea agregar un jugador?: ( 'y' || 'n' ) o Recuperar Partida Anterior?: ( 'r' )" << endl;cin >> op;
 		if (op == 'y' || op == 'Y') {
@@ -28,10 +28,10 @@ Juego::Juego() {
 	} while (op == 'y' || op == 'Y');
 
 
-	//creacion de dealer
+	//CREACION DEL DEALER
 	JugadorGenerico* dealer = crearDealer();
 
-	//dar dos cartas a los jugadores
+	//SE ENTREGAN 2 CARTAS A TODOS LOS JUGADORES
 	int numDeJugadores = listaJugadores->cantidad();
 	for (int i = 1; i <= numDeJugadores; i++) {
 		listaJugadores->getJugador(i)->pedirCarta(mazo);
@@ -44,7 +44,7 @@ Juego::Juego() {
 
 
 
-	//opciones por turno
+	//MENU DE OPCIONES PARA LOS JUGADORES
 	do {
 		cout << listaJugadores->getJugador(lugar)->toString() << endl;
 		cout << "(D)eme carta - (P)asar - (G)uardar Partida - (S)alir y ver resultados" << endl; cin >> op;
@@ -100,7 +100,7 @@ Juego::Juego() {
 	ptsDealer = dealer->getPuntos();
 
 	//resultados (comentar para entrega final, se deja por ahora para ver bien como va todo)
-	/*if (primero != 0) {
+	if (primero != 0) {
 		cout << "El primero jugador en alcanzar 21 fue: " << listaJugadores->getJugador(primero)->getNick() << endl;
 		return;
 	}
@@ -114,13 +114,13 @@ Juego::Juego() {
 
 
 	if (listaJugadores->getGanador()->getPuntos() > ptsDealer) {
-		cout << "EL GANADOR ES: " << listaJugadores->getGanador()->getNick() << endl;
-		cout << "Con una puntuacion de: " << listaJugadores->getGanador()->getPuntos() << endl;
+		cout << "EL GANADOR ES: " << listaJugadores->getGanador()->getNick();
+		cout << " Con una puntuacion de: " << listaJugadores->getGanador()->getPuntos() << endl;
 		cout << "(el dealer obtuvo una puntuacion de: " << ptsDealer << " )" << endl;
 	}
 
 	else
-		cout << "GANO EL DEALER CON " << ptsDealer << " puntos!" << endl;*/
+		cout << "GANO EL DEALER CON " << ptsDealer << " puntos!" << endl;
 
 	//RESULTADOS
 	cout << listaJugadores->toString() << endl;

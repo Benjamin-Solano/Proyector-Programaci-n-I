@@ -1,6 +1,16 @@
 #include "Juego.h"
 #include "Jugador.h"
 
+/*
+
+PROYECTO PROGRAMACION 1
+ESTUDIANTES:
+BENJAMIN SOLANO
+JONATHAN AVALOS
+
+*/
+
+
 int main() {
 
 	Juego* jugar = new Juego();
@@ -9,6 +19,7 @@ int main() {
 	jugar;
 
 
+	delete jugar;
 	system("pause");
 	return 0;
 }

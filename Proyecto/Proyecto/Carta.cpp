@@ -49,15 +49,16 @@ void Carta::guardar(ostream& salida) {
 
 Carta* Carta::recuperar(fstream& strm)
 {
-	string valorStr, paloStr, baStr = "";
+	string valorStr, paloStr, baStr = ""; // Creacion de variables string para almacenar datos procedentes del archivo
 	bool bocaAbajo = false;
 	getline(strm, valorStr, DELIMITA_CAMPO);
 	getline(strm, paloStr, DELIMITA_CAMPO);
 	getline(strm, baStr, DELIMITA_REGISTRO);
+	// Validaciones del atributo BocaAbajo
 	if (baStr == "")
 		return nullptr;
 	if (baStr == "1")
 		bocaAbajo = true;
+	// Creacion de objeto tipo Carta
 	return new Carta(valorStr, paloStr, bocaAbajo);
-
 }

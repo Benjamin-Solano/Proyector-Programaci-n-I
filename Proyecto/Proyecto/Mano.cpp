@@ -9,10 +9,9 @@ Mano::Mano() {
 
     for (int i = 0; i < tam; i++) {
         Carta* carta = new Carta();
-        cartas[i] = carta;
+        cartas[i] = nullptr;
     }
-
-
+    
 }
 Mano::Mano(const Mano& CopyMano) : tam(CopyMano.tam), can(CopyMano.can) {
     cartas = new Carta * [tam];
